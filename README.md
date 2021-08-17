@@ -15,7 +15,6 @@
 
 - Alpine Component Start with `x-data`
 - Data Binding with `x-bind` and `x-model`
-- 4 sections • 14 lectures • 39m total length
 - Special `x-model` Modifiers
 - Toggle elements with `x-show`
 - Removing page flickerings with `x-cloak`
@@ -42,6 +41,7 @@
 ## Learn all about version 3 of the new, lightweight, JavaScript framework.
 
 ### What you'll learn:
+
 - Learn the JavaScript framework Alpine
 - Development of interactive websites with Alpine
 - The proper use-cases for Alpine
