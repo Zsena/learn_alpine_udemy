@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <ul x-data="{ users: [
+        { id: 1, first_name: 'James' },
+        { id: 2, first_name: 'John' },
+        { id: 3, first_name: 'Jane' },
+    ] }">
+       <template x-for="user in users" :key="user.id">
+            <li x-text="user.first_name"></li>
+       </template>
+    </ul>
+</html>

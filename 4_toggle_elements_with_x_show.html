@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div x-data="{ show: false, page: ' ' }">
+        <button @click="show = !show">Dropdown</button>
+
+        <div x-show="show">
+            <button @click="page = ' ' ">Home</button>
+            <button @click="page = 'settings'">Settings</button>
+            <button @click="page = 'profile'">Profile</button>
+        </div>
+        
+        <h1 x-show="page === ' ' ">Home</h1>
+        <h1 x-show="page == 'settings'">Settings</h1>
+        <h1 x-show="page == 'profile'">Profile</h1>
+
+    </div>
+</html>      

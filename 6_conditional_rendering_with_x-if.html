@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div x-data="{ page: ' ' }">
+        <button @click="page = ''">Home</button>
+        <button @click="page = 'settings'">Settings</button>
+        <button @click="page = 'profile'">Profile</button>
+
+        <template x-if="page === ''">
+            <h1>Home</h1>
+        </template>
+        <template x-if="page === 'settings'">
+            <h1>Settings</h1>
+        </template>
+        <template x-if="page === 'profile'">
+            <h1>Profile</h1>
+        </template>
+    </div>
+</html>      

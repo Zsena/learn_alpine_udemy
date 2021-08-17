@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div x-data="{ page: 'home' }">
+        <button @click="page = 'home'">Home</button>
+        <button @click="page = 'settings'">Settings</button>
+        <button @click="page = 'profile'">Profile</button>
+        <h1 x-text="page.charAt(0).toUpperCase() + page.slice(1)"></h1>
+    </div>
+</html>      

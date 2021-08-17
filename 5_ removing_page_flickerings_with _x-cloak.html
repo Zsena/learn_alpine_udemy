@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body>
+    <div x-data="{ show: false, page: ' ' }">
+        <button @click="show = !show">Dropdown</button>
+
+        <div x-show="show" x-cloak>
+            <button @click="page = ' ', show = false">Home</button>
+            <button @click="page = 'settings', show = false">Settings</button>
+            <button @click="page = 'profile', show = false">Profile</button>
+        </div>
+        
+        <h1 x-show="page === ' ' " x-cloak>Home</h1>
+        <h1 x-show="page == 'settings'" x-cloak>Settings</h1>
+        <h1 x-show="page == 'profile'" x-cloak>Profile</h1>
+
+    </div>
+</html>      

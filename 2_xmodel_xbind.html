@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div x-data="{ message: 'Hello!' }">
+        <h1 x-text="message"></h1>
+        <!-- <input type="text" x-bind:placeholder="message"> -->
+        <input type="text" x-model="message">
+        <button @click="message = 'Hi'">Say Hi!</button>
+        <button @click="message = 'Bye'">Say Bye!</button>
+    </div>
+    
+</html>

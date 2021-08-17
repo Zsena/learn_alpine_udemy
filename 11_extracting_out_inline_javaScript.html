@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<style>
+
+    .name-wrapper span {
+        font-weight: 500;
+        font-size: 2rem;
+    }
+
+    
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem;
+    }
+
+    span {
+        width: 20%;
+        background-color: #b1d4c8;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        padding: 1rem;
+        margin: 0.5rem;
+        border-radius: 1rem;
+    }
+
+    span:hover {
+        background-color: #333;
+        color: #fff;
+    }
+
+    img {
+        width: 60px;
+        border-radius: 50%;
+        border: 5px solid #333;
+    }
+</style>
+<body>
+    <ul x-data="userList" x-init="users = await fetchUsers()">
+		<li class="name-wrapper">
+			<template x-for="colName in colNames">
+				<span x-text="colName"></span>
+			</template>
+		</li>
+		<template x-for="user in users" :key="user.id">
+			<li>
+				<span x-text="user.id"></span>
+				<span x-text="user.first_name"></span>
+				<span x-text="user.last_name"></span>
+				<span x-text="user.email"></span>
+				<span>
+					<img :src="user.avatar" alt="User Avatar">
+				</span>
+			</li>
+		</template>
+	</ul>
+    <script>
+        const userList = () => {
+            return {
+                users: [], 
+                colNames: ['id', 'first_name', 'last_name', 'email', 'image'],
+                fetchUsers: () => {
+                    return fetch('https://reqres.in/api/users')
+                    .then(response => response.json())
+                    .then(result => result.data)
+                }
+            }
+        }
+    </script>
+</html>

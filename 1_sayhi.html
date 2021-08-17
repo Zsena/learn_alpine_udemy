@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div x-data="{ message: 'Hello!' }">
+        <!-- <button x-on:click="alert(message)">Say Hi!</button> -->
+        <button x-data="{ message: 'Hi' }" @click="alert(message)">Say Hi!</button>
+        <button @click="alert(message)">Say Hello!</button>
+    </div>
+    
+</html>

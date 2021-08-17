@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <ul x-data="{ users: ['You', 'Me', 'Someone Else'] }">
+       <template x-for="user in users">
+            <li x-text="user"></li>
+       </template>
+    </ul>
+</html>
